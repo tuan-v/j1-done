@@ -1,0 +1,62 @@
+
+class Vaccine {
+  
+    protected String MaVC;
+    protected String TenVC;
+    protected float ThoiGianTacDung;
+    protected String NgayHetHan;
+    
+    public Vaccine(){
+        
+    }
+
+    public Vaccine(String MaVC, String TenVC, float ThoiGianTacDung, String NgayHetHan) {
+        this.MaVC = MaVC;
+        this.TenVC = TenVC;
+        this.ThoiGianTacDung = ThoiGianTacDung;
+        this.NgayHetHan = NgayHetHan;
+    }
+
+    public String getMaVC() {
+        return MaVC;
+    }
+
+    public String getTenVC() {
+        return TenVC;
+    }
+
+    public float getThoiGianTacDung() {
+        return ThoiGianTacDung;
+    }
+
+    public String getNgayHetHan() {
+        return NgayHetHan;
+    }
+
+    public void setMaVC(String MaVC) {
+        this.MaVC = MaVC;
+    }
+
+    public void setTenVC(String TenVC) {
+        this.TenVC = TenVC;
+    }
+
+    public void setThoiGianTacDung(float ThoiGianTacDung) {
+        this.ThoiGianTacDung = ThoiGianTacDung;
+    }
+
+    public void setNgayHetHan(String NgayHetHan) {
+        this.NgayHetHan = NgayHetHan;
+    }
+    public void nhapThongTin(){
+        
+    }
+    public void inThongTin(){
+        System.out.println("Ma vc la: "+getMaVC());
+        System.out.println("Ten vc la: "+getTenVC());
+        System.out.println("Thoi gian tac dung la: "+getThoiGianTacDung());
+        System.out.println("Ngay het han la: "+getNgayHetHan());
+    }
+    
+}
+
