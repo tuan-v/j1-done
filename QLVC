@@ -1,0 +1,98 @@
+public class QLVC {
+
+
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        ArrayList<Vaccine> qlvc= new ArrayList<>();
+        
+        System.out.println("------------+------------");
+        System.out.println("CN1.Nhap danh sach");
+        System.out.println("CN2.Xuat danh sach");
+        System.out.println("CN3.Xuat danh sach VC (tac dung > 6t)");
+        System.out.println("CN4.Sap xep giam dan theo thoi gian tac dung");
+        System.out.println("CN5.Ke thua");
+        System.out.println("CN0.Thoat");
+        do {
+            System.out.println("Moi chon chuc nang: ");
+            int chon= sc.nextInt();
+            
+            switch(chon){
+                case 1:
+                    CN1(qlvc);
+                    break;
+                case 2:
+                    CN2(qlvc);
+                    break;
+                case 3:
+                    CN3(qlvc);
+                    break;
+                case 4:
+                    CN4(qlvc);
+                    break;
+                case 5:
+                    CN5(qlvc);
+                    break;
+                case 0:
+                    System.out.println("Thoat chuong trinh");
+                    System.exit(0);
+                       
+            }
+                 
+            
+        } while (true);
+    }
+    public static void CN1(ArrayList<Vaccine> qlvc ){
+        while(true){  
+         
+        Scanner sc= new Scanner(System.in);
+            System.out.println("Moi nhap ma vc: ");
+            String ma= sc.nextLine();
+            System.out.println("Moi nhap ten vc: ");
+            String ten=sc.nextLine();
+            System.out.println("Moi nhap thoi gian tac dung: ");
+            float tg=sc.nextFloat();
+            sc.nextLine();
+            System.out.println("Moi nhap ngay het han: ");
+            String ngay= sc.nextLine();
+           
+            Vaccine vc= new Vaccine(ma, ten, tg, ngay);
+            qlvc.add(vc);
+            System.out.println("Ban co muon nhap tiep khong, nhap N de thoat");
+            if(sc.nextLine().equalsIgnoreCase("N")){
+                break;
+            }
+    }
+    
+}
+    public static void CN2(ArrayList<Vaccine> qlvc){
+        for(Vaccine x:qlvc ){
+            x.inThongTin();
+        }
+    }
+    public static void CN3(ArrayList<Vaccine> qlvc) {
+    System.out.println("Danh sach vaccine co thoi gian tac dung lon hon 6 thang:");
+    for (Vaccine x : qlvc) {
+        if (x.getThoiGianTacDung() > 6) {
+            x.inThongTin();
+        }
+    }
+}
+    public static void CN4(ArrayList<Vaccine> qlvc){
+       Comparator<Vaccine> comp= new Comparator<Vaccine>() {
+           @Override
+           public int compare(Vaccine o1, Vaccine o2) {
+               return Float.valueOf(o1.getThoiGianTacDung()).compareTo(o2.getThoiGianTacDung());
+       }
+           
+    };
+        Collections.sort(qlvc, comp);
+        Collections.reverse(qlvc);
+    
+    }
+    public static void CN5(ArrayList<Vaccine> qlvc){
+        VaccineVN vcVn=new VaccineVN();
+        vcVn.nhapThongTin();
+        vcVn.inThongTin();
+        }
+    }
