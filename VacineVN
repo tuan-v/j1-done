@@ -1,0 +1,49 @@
+
+import java.util.Scanner;
+
+public class VaccineVN extends Vaccine{
+   private String QuocGia;
+   String ma;
+   String ten;
+   float tg;
+   String ngay;
+   
+   public VaccineVN(){
+       
+   }
+    public VaccineVN(String QuocGia, String MaVC, String TenVC, float ThoiGianTacDung, String NgayHetHan) {
+        super(MaVC, TenVC, ThoiGianTacDung, NgayHetHan);
+        this.QuocGia = QuocGia;
+    }
+
+
+    public String getQuocGia() {
+        return QuocGia;
+    }
+    
+    public void setQuocGia(String QuocGia){
+        this.QuocGia=QuocGia;
+    }
+     Scanner sc= new Scanner(System.in);
+    @Override
+    public void nhapThongTin(){
+          System.out.println("Moi nhap ma vc: ");
+            ma= sc.nextLine();
+            System.out.println("Moi nhap ten vc: ");
+            ten=sc.nextLine();
+            System.out.println("Moi nhap thoi gian tac dung: ");
+            tg=sc.nextFloat();
+            sc.nextLine();
+            System.out.println("Moi nhap ngay het han: ");
+            ngay= sc.nextLine();
+    }
+    @Override
+    public void inThongTin(){
+       System.out.println("Ma vc la: "+ma);
+        System.out.println("Ten vc la: "+ten);
+        System.out.println("Thoi gian tac dung la: "+tg);
+        System.out.println("Ngay het han la: "+ngay);
+        System.out.println("Quoc gia la: VN");
+    }
+   
+}
